@@ -1,14 +1,19 @@
 {
-  "name": "workforge-ts",
+  "name": "workforge-cli",
+  "version": "0.1.0",
   "module": "src/index.ts",
   "bin": {
     "wf": "./src/index.ts"
   },
   "type": "module",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "bun run src/index.ts",
-    "typecheck": "bunx tsc --noEmit"
+    "typecheck": "bunx tsc --noEmit",
+    "build": "bun build src/index.ts --target bun --outfile dist/index.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
